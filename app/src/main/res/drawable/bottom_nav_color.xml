@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fixed colors to avoid ResourceNotFoundException -->
+    <item android:color="#2E6B3E" android:state_checked="true"/>
+    <item android:color="#AAAAAA"/>
+</selector>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ===== PERMISSIONS ===== -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permission pour accéder à la caméra -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- Permission pour lire les images (Android 13+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <!-- Permission pour lire le stockage (Android 12 et moins) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"/>
+
+    <!-- Indique que l'app utilise la caméra (mais pas obligatoire) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+
+    <!-- ===== QUERIES (Fix for Google Play Services visibility) ===== -->
+    <queries>
+        <package android:name="com.google.android.gms" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TasteBookAPP"
+        tools:targetApi="31">
+
+        <!-- ===== ACTIVITÉ PRINCIPALE ===== -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!-- intent-filter : dit qu'elle est le point d'entrée de l'app -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ===== ACTIVITÉ NOUVELLE RECETTE ===== -->
+        <activity
+            android:name=".NewRecipeActivity"
+            android:exported="false"
+            android:label="Nouvelle Recette"/>
+
+        <!-- ===== FILE PROVIDER (obligatoire pour la caméra) ===== -->
+        <!-- Permet à l'app de partager un fichier photo avec l'app caméra -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <!-- Pointe vers le fichier file_paths.xml qu'on a créé dans res/xml/ -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="Profil"/>
+
+        <activity
+            android:name=".ParametresActivity"
+            android:exported="false"
+            android:label="Paramètres"/>
+
+        <activity
+            android:name=".CollectionsActivity"
+            android:exported="false"
+            android:label="Mes Collections"/>
+        <activity android:name=".AvisActivity" android:exported="false"/>
+    </application>
+
+</manifest>

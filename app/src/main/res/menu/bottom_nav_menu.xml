@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ce fichier définit les 5 onglets de la bottom navigation bar -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Onglet 1 : Recettes (page d'accueil) -->
+    <item
+        android:id="@+id/nav_recettes"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Recettes"/>
+
+    <!-- Onglet 2 : Recherche -->
+    <item
+        android:id="@+id/nav_recherche"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Recherche"/>
+
+    <!-- Onglet 3 : Ajouter (bouton + central) -->
+    <item
+        android:id="@+id/nav_ajouter"
+        android:icon="@android:drawable/ic_input_add"
+        android:title=""/>
+    <!-- title vide car le bouton + sera stylisé différemment -->
+
+    <!-- Onglet 4 : Favoris -->
+    <item
+        android:id="@+id/nav_favoris"
+        android:icon="@android:drawable/btn_star_big_off"
+        android:title="Favoris"/>
+
+    <!-- Onglet 5 : Profil -->
+    <item
+        android:id="@+id/nav_profil"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Profil"/>
+
+</menu>

@@ -1,0 +1,27 @@
+<resources>
+    <style name="Theme.TasteBookAPP" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Main Brand Colors -->
+        <item name="colorPrimary">#2E6B3E</item>
+        <item name="colorPrimaryVariant">#1B4025</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">#AADDBB</item>
+        <item name="colorSecondaryVariant">#77AA88</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- UI Element Colors -->
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#000000</item>
+        <item name="android:windowBackground">#F5F5F0</item>
+        <item name="android:statusBarColor">#1B4025</item>
+
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#666666</item>
+    </style>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
